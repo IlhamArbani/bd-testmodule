@@ -24,11 +24,16 @@ function addTeam(){
 function cekTeam(teamChosen,inputText){
     const countTeams = teamChosen.childElementCount;
     const buttonConfirm = document.getElementById('confirm-team');
+    const buttonConfirmMember = document.getElementById('confirm-member');
     let moreTeam = 3 - countTeams
 
     buttonConfirm.innerText = `Need ${moreTeam} more people`
 
    if(countTeams === 3){
+    buttonConfirmMember.disabled = true;
      inputText.disabled = true;
+     buttonConfirm.classList.toggle('not-ready');
+     buttonConfirm.classList.add('ready')
+     buttonConfirm.innerText = `Teams Ready`
    }
 }
